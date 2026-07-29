@@ -1,71 +1,88 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
+#define max 10
 
-int precedence(char op) {
-    if (op == '^')
-        return 3;
-    if (op == '*' || op == '/')
-        return 2;
-    if (op == '+' || op == '-')
-        return 1;
-    return 0;
+ int st[max];
+ int top=-1;
+
+ bool overflow () {
+return top == max-1;
 }
 
-string infixToPostfix(string infix) {
-    stack<char> st;
-    string postfix = "";
+bool empty () {
+    return top == -1;
+}
 
-    for (char ch : infix) {
-
-        // Operand
-        if (isalnum(ch)) {
-            postfix += ch;
-        }
-
-        // Left Parenthesis
-        else if (ch == '()') {
-            st.push(ch);
-        }
-
-        // Right Parenthesis
-        else if (ch == ')') {
-            while (!st.empty() && st.top() != '(') {
-                postfix += st.top();
-                st.pop();
-            }
-            if (!st.empty())
-                st.pop(); // Remove '('
-        }
-
-        // Operator
-        else {
-            while (!st.empty() && st.top() != '(' &&
-                   ((precedence(st.top()) > precedence(ch)) ||
-                    (precedence(st.top()) == precedence(ch) && ch != '^'))) {
-                postfix += st.top();
-                st.pop();
-            }
-            st.push(ch);
-        }
+void push(int x) {
+    if(overflow()) {
+        cout<<"Stack Overflow"<<endl;
+    } else {
+        top++;
+        st[top] = x;
     }
+}
 
-    
-    while (!st.empty()) {
-        postfix += st.top();
-        st.pop();
+  void pop(int x) {
+    if(empty()) {
+        cout<<"Stack Underflow"<<endl;
+    } else {
+        top--;
     }
+}
 
-    return postfix;
+void peek() {
+    if(empty()) {
+        cout<<"Stack is empty"<<endl;
+    } else {
+        cout<<"Top element is: "<<st[top]<<endl;
+    }
+}
+
+void display() {
+    if(empty()) {
+        cout<<"Stack is empty"<<endl;
+    } else {
+        cout<<"Stack elements are: ";
+        for(int i=top; i>=0; i--) {
+            cout<<st[i]<<" ";
+        }
+        cout<<endl;
+    }
 }
 
 int main() {
-    string infix;
-    cout << "Enter Infix Expression: ";
-    cin >> infix;
+    int choice, x;
+    do {
+        cout<<"1. Push"<<endl;
+        cout<<"2. Pop"<<endl;
+        cout<<"3. Peek"<<endl;
+        cout<<"4. Display"<<endl;
+        cout<<"5. Exit"<<endl;
+        cout<<"Enter your choice: ";
+        cin>>choice;
 
-    string postfix = infixToPostfix(infix);
-
-    cout << "Postfix Expression: " << postfix << endl;
+        switch(choice) {
+            case 1:
+                cout<<"Enter element to push: ";
+                cin>>x;
+                push(x);
+                break;
+            case 2:
+                pop(x);
+                break;
+            case 3:
+                peek();
+                break;
+            case 4:
+                display();
+                break;
+            case 5:
+                cout<<"Exiting..."<<endl;
+                break;
+            default:
+                cout<<"Invalid choice"<<endl;
+        }
+    } while(choice != 5);
 
     return 0;
 }
