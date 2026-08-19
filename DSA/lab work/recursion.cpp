@@ -13,15 +13,21 @@ int fact(int n){
 int fib(int n){
     if(n<=1)
         return n;
-    else
-        return fib(n-1) + fib(n-2);
+
+return fib(n-1) + fib(n-2);
 }
 
 
 
 int main(){
-    cout<<fact(5)<<endl;
-    cout<<fib(5)<<endl;
+    int n;
+    cin>>n;
+
+    cout<<fact(n)<<endl;
+    for(int i=0;i<n;i++){
+        cout<<fib(i)<<" ";
+    }
+    return 0;
 };
 
 
