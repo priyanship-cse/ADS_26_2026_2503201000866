@@ -42,13 +42,13 @@ void dequeue() {
     }
 }
 
-void peek() {
-    if (isunderflow()) {
-        cout << "Queue is empty";
-        return;
-    }
-    cout << q[front];
-}
+// void peek() {
+//     if (isunderflow()) {
+//         cout << "Queue is empty";
+//         return;
+//     }
+//     cout << q[front];
+// }
 
 void traverse() {
     if (isunderflow()) {
@@ -60,20 +60,30 @@ void traverse() {
     }
 }
 
+
+
 int main() {
+    cout<<"TOTAL ELEMENT ARE :  ";
     enqueue(10);
     enqueue(20);
     enqueue(30);
+    enqueue(40);
+    enqueue(50);    
+   
+
+
     
     traverse();
     cout << endl;
-    
-    peek();
-    cout << endl;
-    
+   // peek(); 
+    cout<<"AFTER DEQUEUE ELEMENT ARE :  ";
     dequeue();
     traverse();
     cout << endl;
+    cout<<"AFTER ENQUEUE ELEMENT ARE :  ";
+     enqueue(60);
+    enqueue(70);
+    traverse();
     
     return 0;
 }
