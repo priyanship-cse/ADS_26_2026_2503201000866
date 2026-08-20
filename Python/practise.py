@@ -1,10 +1,10 @@
 # if else condition practise 
 
-marks1 = int(input("Enter your marks of subject 1 : "))
-marks2 = int(input("Enter your marks of subject 2 : "))
-marks3 = int(input("Enter your marks of subject 3 : "))
-marks4 = int(input("Enter your marks of subject 4 : "))
-marks5 = int(input("Enter your marks of subject 5 : "))
+marks1 = int(input(" marks of subject 1 : "))
+marks2 = int(input(" marks of subject 2 : "))
+marks3 = int(input(" marks of subject 3 : "))
+marks4 = int(input(" marks of subject 4 : "))
+marks5 = int(input(" marks of subject 5 : "))
 
 sum = marks1 + marks2 + marks3 + marks4 + marks5
 percent = (sum / 500) * 100
