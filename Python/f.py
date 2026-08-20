@@ -48,5 +48,15 @@ student.clear()
 
 # if else condition
 
+num = 10
+if num > 0 :
+    print("Number is positive")
+else:
+    print("Number is not positive")
 
-
+# elif condition
+age = int(input("Enter your age : "))
+if age >= 18 :
+ print("Eligible")
+else :
+   print("Not Eligible")
