@@ -69,3 +69,7 @@ print("Max: " ,np.max(a5))
 print("Min : " ,np.min(a5))
 print("Std : " ,np.std(a5))
 print("Var : " ,np.var(a5))
+
+ar5 = np.array([10,200,3,40,5])
+
+print(np.sort(ar5))
