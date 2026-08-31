@@ -73,3 +73,30 @@ print("Var : " ,np.var(a5))
 ar5 = np.array([10,200,3,40,5])
 
 print(np.sort(ar5))
+
+
+# concetenate  vstack
+
+
+a1 = np.array([1,2,3])
+b1 = np.array([4,5,6])
+print(a1)
+print(b1)
+print(np.concatenate((a1,b1)))
+print(np.vstack((a1,b1)))
+
+
+# split 
+ar6 = np.arange(9)
+print(np.split(ar6,3))
+
+# boardcasting 
+
+ar7 = np.array([1,2,3,4])
+print(ar7+10)
+
+# 2d araay 
+
+a2 = np.array([1,2,3])
+b2 = np.array([4,5,6])
+print(a2+b2);
