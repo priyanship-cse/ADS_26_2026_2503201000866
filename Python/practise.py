@@ -1,3 +1,5 @@
+import numpy as np
+
 # # 1. if else condition practise 
 
 # marks1 = int(input(" marks of subject 1 : "))
@@ -51,3 +53,27 @@ for i in range(1 , n + 1):
 
 
 print(sum)
+
+
+a1 = np.arange(2,21)
+print(a1)
+print(a1[a1 % 2 == 0])
+
+a2  =np.array([10,20,30,40,50])
+print("Sum: " ,np.sum(a2))
+print( "Mean : ",np.mean(a2))
+print("Max: " ,np.max(a2))
+print("Min : " ,np.min(a2))
+print("Std : " ,np.std(a2))
+print("Var : " ,np.var(a2))
+
+a3 = 10
+print(np.zeros(a3))
+print(np.ones(a3))
+
+
+a4 = np.array([1,20,5])
+print(a4)
+
+
+
