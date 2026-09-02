@@ -43,3 +43,30 @@ int main() {
     return 0;
 }
 
+
+int palindrome(int n) {
+    int original = n, reversed = 0;
+
+    while (n > 0) {
+        int digit = n % 10;
+        reversed = reversed * 10 + digit;
+        n /= 10;
+    }
+
+    return original == reversed;
+}
+
+int main () {
+    int number;
+
+    cout << "Enter a number: ";
+    cin >> number;
+
+    if (palindrome(number))
+        cout << number << " is a palindrome." << endl;
+    else
+        cout << number << " is not a palindrome." << endl;
+
+    return 0;
+}
+
