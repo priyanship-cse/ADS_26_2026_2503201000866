@@ -5,3 +5,52 @@
  p{
     color : black;
  }
+
+#about {
+   background-color: rgb(173, 173, 226);
+}
+
+.box {
+   border: 2px solid black;
+   padding: 20px;
+}
+
+h1 {
+   text-align: center;
+}
+
+#student {
+   background-color: rgb(67, 56, 43);
+   padding: 20px;
+}
+
+.skill {
+   border : 2px solid grey;
+}
+
+.box {
+   margin: 5px;
+   border : 2px solid green;
+}
+
+#student h2 {
+    text-align: center;
+}
+
+.skill p {
+   color: rgb(78, 16, 16);
+
+}
+
+h1 {
+   text-align: center;
+}
+
+.abt {
+   border: 2px solid black;
+}
+
+btn {
+    border : 2px solid black;
+    align-items: center;
+}
