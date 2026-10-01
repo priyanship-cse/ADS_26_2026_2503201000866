@@ -60,7 +60,7 @@ void postorder(Node* root) {
 }
 
 int main() {
-    cout << "Enter root: ";
+    cout << "Enter the root : ";
     Node* root = create();
 
     cout << "Preorder: ";
