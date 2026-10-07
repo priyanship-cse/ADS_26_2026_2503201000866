@@ -59,7 +59,7 @@ cout<<"All element of stack :  ";
 
  display(s);
 
- peek(s);
+ peek(s); 
 
 cout<<"Now after all the operation all element are :    " ;
 

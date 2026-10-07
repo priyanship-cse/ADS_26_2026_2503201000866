@@ -59,6 +59,33 @@ void postorder(Node* root) {
     cout << root->data << " ";
 }
 
+int totalnode(Node* root) {
+    if (root == NULL)
+        return 0;
+
+    return 1 + totalnode(root->left) + totalnode(root->right);
+}
+
+int leafnode(Node* root) {
+    if (root == NULL)
+        return 0;
+
+    if (root->left == NULL && root->right == NULL)
+        return 1;
+
+    return leafnode(root->left) + leafnode(root->right);
+}
+
+int internalnode(Node* root) {
+    if (root == NULL)
+        return 0;
+
+    if (root->left == NULL && root->right == NULL)
+        return 0;
+
+    return 1 + internalnode(root->left) + internalnode(root->right);
+}
+
 int main() {
     cout << "Enter the root : ";
     Node* root = create();
@@ -71,6 +98,12 @@ int main() {
 
     cout << "\nPostorder: ";
     postorder(root);
+
+    cout << "\nTotal Nodes: " << totalnode(root);
+
+    cout << "\nLeaf Nodes: " << leafnode(root);
+
+    cout << "\nInternal Nodes: " << internalnode(root);
 
     return 0;
 }
